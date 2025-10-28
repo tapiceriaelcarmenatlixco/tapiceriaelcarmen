@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tapicería El Carmen - Tapizados a tu medida en Atlixco, Puebla</title>
+    <meta name="description" content="Tapicería profesional en Atlixco, Puebla. Retapizado de sofás, sillas, cabeceras y muebles a medida. Materiales de calidad y acabados profesionales.">
+    <meta name="keywords" content="tapicería Atlixco, retapizado sofás, tapizado sillas, muebles a medida, tapicería Puebla">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/logo-nuevo-moderno.png" alt="Tapicería El Carmen" class="logo-img">
+                </div>
+                <nav class="nav">
+                    <a href="#inicio" class="nav-link">Inicio</a>
+                    <a href="#servicios" class="nav-link">Servicios</a>
+                    <a href="#horarios" class="nav-link">Horarios</a>
+                    <a href="tel:2441130181" class="nav-link phone-nav">Teléfono</a>
+                </nav>
+                <div class="header-actions">
+                    <a href="tel:2441130181" class="phone-link">
+                        <i class="fas fa-phone"></i>
+                        244 113 0181
+                    </a>
+                </div>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Tapicería El Carmen</h1>
+                <p class="hero-subtitle">Tapizados hechos a tu medida, sin complicaciones</p>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <i class="fas fa-wrench"></i>
+                        <span>Modificaciones de Muebles</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-couch"></i>
+                        <span>Retapizados</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-ruler-combined"></i>
+                        <span>Diseños a la Medida</span>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <a href="#" class="btn-primary btn-large" onclick="abrirWhatsApp()">
+                        <i class="fab fa-whatsapp"></i>
+                        Solicitar Presupuesto
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios Section -->
+    <section class="testimonios">
+        <div class="container">
+            <div class="testimonios-header">
+                <div class="rating-badge">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span class="rating-number">4.8</span>
+                    </div>
+                    <span class="rating-text">BUENA</span>
+                </div>
+            </div>
+            <div class="testimonios-carousel">
+                <div class="testimonios-container" id="testimoniosContainer">
+                    <div class="testimonio-card" data-rating="5.0">
+                        <div class="testimonio-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="rating-number">5.0</span>
+                        </div>
+                        <p class="testimonio-text">"Excelente trabajo en el retapizado de mi sala. Quedó como nueva y el precio fue muy justo."</p>
+                        <div class="testimonio-author">
+                            <strong>María González</strong>
+                            <span>Cliente satisfecha</span>
+                        </div>
+                    </div>
+                    <div class="testimonio-card" data-rating="4.9">
+                        <div class="testimonio-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="rating-number">4.9</span>
+                        </div>
+                        <p class="testimonio-text">"Profesionales y puntuales. Me hicieron una cabecera a medida perfecta para mi dormitorio."</p>
+                        <div class="testimonio-author">
+                            <strong>Carlos Hernández</strong>
+                            <span>Cliente satisfecho</span>
+                        </div>
+                    </div>
+                    <div class="testimonio-card" data-rating="4.8">
+                        <div class="testimonio-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="rating-number">4.8</span>
+                        </div>
+                        <p class="testimonio-text">"Renovaron mis sillas del comedor y quedaron espectaculares. Muy recomendable."</p>
+                        <div class="testimonio-author">
+                            <strong>Ana Martínez</strong>
+                            <span>Cliente satisfecha</span>
+                        </div>
+                    </div>
+                    <div class="testimonio-card" data-rating="4.7">
+                        <div class="testimonio-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="rating-number">4.7</span>
+                        </div>
+                        <p class="testimonio-text">"Tapizaron los asientos de mi moto y quedaron perfectos. Trabajo de calidad y buen precio."</p>
+                        <div class="testimonio-author">
+                            <strong>Roberto Silva</strong>
+                            <span>Cliente satisfecho</span>
+                        </div>
+                    </div>
+                    <div class="testimonio-card" data-rating="4.6">
+                        <div class="testimonio-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="rating-number">4.6</span>
+                        </div>
+                        <p class="testimonio-text">"Buen servicio y atención. Me ayudaron a elegir la tela ideal para mi sofá. Recomendado."</p>
+                        <div class="testimonio-author">
+                            <strong>Laura Pérez</strong>
+                            <span>Cliente satisfecha</span>
+                        </div>
+                    </div>
+                    <div class="testimonio-card" data-rating="5.0">
+                        <div class="testimonio-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="rating-number">5.0</span>
+                        </div>
+                        <p class="testimonio-text">"Fabricaron una cabecera personalizada exactamente como la quería. Muy profesionales."</p>
+                        <div class="testimonio-author">
+                            <strong>Jorge Ramírez</strong>
+                            <span>Cliente satisfecho</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev" onclick="moveCarousel(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn next" onclick="moveCarousel(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="carousel-indicators" id="carouselIndicators"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section id="servicios" class="servicios">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nuestros Servicios</h2>
+                <p class="section-subtitle">Trabajamos con una amplia variedad de muebles y proyectos especiales</p>
+            </div>
+            <div class="servicios-grid">
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="servicio-title">Tapizado de Salas</h3>
+                    <p class="servicio-description">Renovamos completamente tus salas con telas de calidad y acabados profesionales. Transformamos el ambiente de tu hogar.</p>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <i class="fas fa-chair"></i>
+                    </div>
+                    <h3 class="servicio-title">Tapizado de Sillas</h3>
+                    <p class="servicio-description">Transformamos sillas de comedor y oficina. Trabajamos con todos los estilos, desde clásicos hasta modernos.</p>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <h3 class="servicio-title">Tapizado de Sillones</h3>
+                    <p class="servicio-description">Renovamos sillones individuales y reclinables con materiales resistentes y acabados que alargan su vida útil.</p>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <i class="fas fa-loveseat"></i>
+                    </div>
+                    <h3 class="servicio-title">Tapizado de Sofás</h3>
+                    <p class="servicio-description">Especialistas en sofás de 2 y 3 plazas. Restauramos estructura, relleno y aplicamos telas de alta calidad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nosotros Section -->
+    <section id="nosotros" class="nosotros">
+        <div class="container">
+            <div class="nosotros-content">
+                <div class="nosotros-image">
+                    <img src="images/taller-tapiceria.jpg" alt="Taller de Tapicería El Carmen" class="nosotros-img">
+                </div>
+                <div class="nosotros-text">
+                    <h2 class="section-title">El Carmen, Tapicería en Atlixco</h2>
+                    <p class="nosotros-description">
+                        En Tapicería El Carmen trabajamos con dedicación para renovar y fabricar muebles que se adapten a tus necesidades específicas. 
+                        Ubicados en Calzada del Carmen 1112, Hogar del Obrero, Atlixco, ofrecemos servicios de tapicería para casa, negocio y proyectos especiales.
+                    </p>
+                    <p class="nosotros-description">
+                        Cada trabajo se realiza con materiales resistentes y acabados que alargan la vida útil de tus muebles. 
+                        Nos especializamos en adaptar medidas y estilos según lo que necesites, desde la renovación de muebles existentes 
+                        hasta la fabricación de piezas completamente nuevas.
+                    </p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Años de experiencia</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Muebles renovados</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Trabajos garantizados</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section id="contacto" class="contacto">
+        <div class="container">
+            <div class="contacto-content">
+                <div class="horarios-column">
+                    <h2 class="section-title">Horarios de Atención</h2>
+                    <div class="horarios-table">
+                        <div class="horario-row">
+                            <span class="dia">Lunes</span>
+                            <span class="hora">8:00 - 19:00</span>
+                        </div>
+                        <div class="horario-row">
+                            <span class="dia">Martes</span>
+                            <span class="hora">8:00 - 19:00</span>
+                        </div>
+                        <div class="horario-row">
+                            <span class="dia">Miércoles</span>
+                            <span class="hora">8:00 - 19:00</span>
+                        </div>
+                        <div class="horario-row">
+                            <span class="dia">Jueves</span>
+                            <span class="hora">8:00 - 19:00</span>
+                        </div>
+                        <div class="horario-row">
+                            <span class="dia">Viernes</span>
+                            <span class="hora">8:00 - 19:00</span>
+                        </div>
+                        <div class="horario-row">
+                            <span class="dia">Sábado</span>
+                            <span class="hora">8:00 - 16:00</span>
+                        </div>
+                        <div class="horario-row">
+                            <span class="dia">Domingo</span>
+                            <span class="hora">Cerrado</span>
+                        </div>
+                    </div>
+                    <div class="contacto-info">
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span>244 113 0181</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>tapiceriaelcarmen@gmail.com</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Calz del Carmen 1112, Hogar del Obrero, 74260 Atlixco, Pue.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="formulario-column">
+                    <h2 class="section-title">¡Solicita tu presupuesto ahora!</h2>
+                    <p class="form-subtitle">Cuéntanos qué necesitas y te contactaremos por WhatsApp para darte el mejor precio.</p>
+                    <form id="contactForm" class="contacto-form" onsubmit="enviarWhatsAppSimple(event)">
+                        <div class="form-group">
+                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="descripcion" name="descripcion" placeholder="Describe qué necesitas tapizar..." rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-whatsapp">
+                            Enviar mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Preguntas Frecuentes</h2>
+                <p class="section-subtitle">Resolvemos las dudas más comunes sobre nuestros servicios</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Cuánto puede costar tapizar un sillón?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>El costo depende del tamaño del sillón, tipo de tela y complejidad del trabajo. Un sillón individual puede costar entre $2,500 y $4,500 pesos. Te damos presupuesto sin compromiso.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Cuánto cuesta tapizar una silla?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>El tapizado de una silla de comedor oscila entre $800 y $1,500 pesos, dependiendo del diseño y material. Para sillas de oficina el rango es de $1,200 a $2,000 pesos.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Qué es mejor, tapizar una sala o comprar una nueva?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Si la estructura está en buen estado, tapizar es más económico y ecológico. Puedes renovar completamente el look por una fracción del costo de una sala nueva, además de mantener la comodidad que ya conoces.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Cuál es el mejor tapizado para sillones?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Recomendamos telas resistentes como microfibra o telas tratadas para uso intensivo. Para hogares con mascotas, las telas sintéticas son ideales. Te asesoramos según tu uso específico.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Cuánto tiempo tarda un trabajo de tapicería?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Un sofá de tres plazas tarda entre 7 y 10 días laborables. Sillas individuales de 3 a 5 días. Proyectos especiales pueden tomar más tiempo. Te damos un plazo estimado al cotizar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Ubicación Section -->
+    <section id="ubicacion" class="ubicacion">
+        <div class="container">
+            <div class="ubicacion-header">
+                <h2 class="section-title">Tapicería El Carmen</h2>
+            </div>
+            <div class="ubicacion-grid">
+                <div class="ubicacion-column">
+                    <div class="ubicacion-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="ubicacion-title">DIRECCIÓN</h3>
+                    <p class="ubicacion-text">Calz del Carmen 1112, Hogar del Obrero, 74260 Atlixco, Pue.</p>
+                    <a href="https://maps.google.com/?q=Calz+del+Carmen+1112,+Hogar+del+Obrero,+74260+Atlixco,+Pue" target="_blank" class="ubicacion-link">Estamos en Google Maps</a>
+                </div>
+                <div class="ubicacion-column">
+                    <div class="ubicacion-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="ubicacion-title">Horas</h3>
+                    <div class="horarios-list">
+                        <p>Lunes 8:00-19:00</p>
+                        <p>Martes 8:00-19:00</p>
+                        <p>Miércoles 8:00-19:00</p>
+                        <p>Jueves 8:00-19:00</p>
+                        <p>Viernes 8:00-19:00</p>
+                        <p>Sábado 8:00-16:00</p>
+                        <p>Domingo Cerrado</p>
+                    </div>
+                </div>
+                <div class="ubicacion-column">
+                    <div class="ubicacion-icon">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <h3 class="ubicacion-title">Cómo llegar desde</h3>
+                    <div class="rutas-list">
+                        <p><i class="fas fa-map-pin"></i> Centro de Atlixco</p>
+                        <p><i class="fas fa-map-pin"></i> Cholula</p>
+                        <p><i class="fas fa-map-pin"></i> Puebla Centro</p>
+                        <p><i class="fas fa-map-pin"></i> San Andrés Cholula</p>
+                        <p><i class="fas fa-map-pin"></i> Izúcar de Matamoros</p>
+                        <p><i class="fas fa-map-pin"></i> Metepec</p>
+                        <p><i class="fas fa-map-pin"></i> Tianguismanalco</p>
+                    </div>
+                </div>
+                <div class="ubicacion-column">
+                    <div class="ubicacion-icon">
+                        <i class="fas fa-crosshairs"></i>
+                    </div>
+                    <h3 class="ubicacion-title">Coordenadas GPS</h3>
+                    <p class="coordenadas">18.9058, -98.4308</p>
+                    <div class="contacto-directo">
+                        <p><i class="fas fa-phone"></i> 244 113 0181</p>
+                        <p><i class="fab fa-whatsapp"></i> <a href="#" onclick="abrirWhatsApp()">WhatsApp</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Tapicería El Carmen</h3>
+                    <p class="footer-text">Tapizados hechos a tu medida, sin complicaciones. Renovamos tus muebles con acabados profesionales y materiales de calidad.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Contacto</h3>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> Calz del Carmen 1112, Hogar del Obrero, 74260 Atlixco, Pue.</p>
+                        <p><i class="fas fa-phone"></i> 244 113 0181</p>
+                        <p><i class="fab fa-whatsapp"></i> <a href="#" onclick="abrirWhatsApp()">WhatsApp</a></p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Horarios</h3>
+                    <div class="footer-horarios">
+                        <p>Lun - Vie: 8:00 AM - 7:00 PM</p>
+                        <p>Sábado: 8:00 AM - 4:00 PM</p>
+                        <p>Domingo: Cerrado</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Tapicería El Carmen. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="#" class="whatsapp-float" onclick="abrirWhatsApp()" title="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
