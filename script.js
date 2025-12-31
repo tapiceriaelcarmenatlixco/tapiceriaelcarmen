@@ -271,6 +271,15 @@ function initCarousel() {
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', function() {
+    // ------------------------------------------
+    // ACTUALIZACIÓN DE AÑO (COPYRIGHT)
+    // ------------------------------------------
+    const yearSpan = document.getElementById('current-year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+    // ------------------------------------------
+
     // Manejar clicks en enlaces de navegación
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', function(e) {
@@ -309,13 +318,6 @@ document.addEventListener('DOMContentLoaded', function() {
             toggleMobileMenu();
         }
     });
-    
-    // Precargar imagen del hero
-    const heroImg = new Image();
-    heroImg.src = 'images/hero-tapiceria.jpg';
-    heroImg.onload = function() {
-        document.querySelector('.hero-background').style.backgroundImage = `url(${this.src})`;
-    };
     
     // Lazy loading para imágenes
     if ('IntersectionObserver' in window) {
