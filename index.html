@@ -99,7 +99,7 @@
                     <a href="#inicio" class="nav-link">Inicio</a>
                     <a href="#servicios" class="nav-link">Servicios</a>
                     <a href="#horarios" class="nav-link">Horarios</a>
-                    <a href="tel:2441130181" class="nav-link phone-nav">Teléfono</a>
+                    <a href="#presupuesto" class="nav-link presupuesto-nav">Presupuesto</a>
                 </nav>
                 <div class="header-actions">
                     <a href="tel:2441130181" class="phone-link">
@@ -350,7 +350,7 @@
     <section id="contacto" class="contacto">
         <div class="container">
             <div class="contacto-content">
-                <div class="horarios-column">
+                <div class="horarios-column" id="horarios" style="scroll-margin-top: 100px;">
                     <h2 class="section-title">Horarios de Atención</h2>
                     <div class="horarios-table">
                         <div class="horario-row">
@@ -397,9 +397,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="formulario-column">
+                <div class="formulario-column" id="presupuesto" style="scroll-margin-top: 100px;">
                     <h2 class="section-title">¡Solicita tu presupuesto ahora!</h2>
-                    <p class="form-subtitle">Cuéntanos qué necesitas y te contactaremos por WhatsApp para darte el mejor precio.</p>
+                    <p class="form-subtitle">Cuéntanos qué necesitas y te contactaremos por WhatsApp para darte el precio.</p>
                     <form id="contactForm" class="contacto-form" onsubmit="enviarWhatsAppSimple(event)">
                         <div class="form-group">
                             <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
