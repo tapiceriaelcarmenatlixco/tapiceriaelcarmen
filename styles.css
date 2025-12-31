@@ -226,7 +226,8 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('images/hero-tapiceria.jpg');
+    /* CORRECCIÓN RUTA IMAGEN */
+    background-image: url('/assets/img/hero-tapiceria.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -599,52 +600,6 @@ body {
     margin-top: var(--spacing-xs);
 }
 
-/* Horarios */
-.horarios {
-    padding: var(--spacing-xxl) 0;
-    background: var(--gris-claro);
-}
-
-.horarios-content {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.horarios-table {
-    background: var(--blanco-puro);
-    border-radius: var(--border-radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
-    margin-top: var(--spacing-xl);
-}
-
-.horario-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--spacing-md) var(--spacing-lg);
-    border-bottom: 1px solid var(--gris-claro);
-}
-
-.horario-row:last-child {
-    border-bottom: none;
-}
-
-.horario-row.cerrado {
-    background: var(--gris-claro);
-    color: var(--gris-medio);
-}
-
-.dia {
-    font-weight: var(--font-weight-semibold);
-    color: var(--gris-carbon);
-}
-
-.hora {
-    color: var(--gris-medio);
-}
-
 /* FAQ */
 .faq {
     padding: var(--spacing-xxl) 0;
@@ -709,302 +664,6 @@ body {
     line-height: 1.6;
 }
 
-/* Contacto */
-.contacto {
-    padding: var(--spacing-xxl) 0;
-    background: var(--gris-claro);
-}
-
-.contacto-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-xxl);
-}
-
-.info-item {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-lg);
-}
-
-.info-icon {
-    width: 60px;
-    height: 60px;
-    background: var(--amarillo-cta);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
-.info-icon i {
-    font-size: 1.5rem;
-    color: var(--negro-suave);
-}
-
-.info-content h3 {
-    font-weight: var(--font-weight-semibold);
-    color: var(--gris-carbon);
-    margin-bottom: var(--spacing-xs);
-}
-
-.info-link {
-    color: var(--gris-medio);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.info-link:hover {
-    color: var(--amarillo-dorado);
-}
-
-.contacto-form {
-    background: var(--blanco-puro);
-    padding: var(--spacing-xl);
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-md);
-}
-
-.form-title {
-    font-size: 1.5rem;
-    font-weight: var(--font-weight-semibold);
-    color: var(--gris-carbon);
-    margin-bottom: var(--spacing-lg);
-}
-
-.form-group {
-    margin-bottom: var(--spacing-md);
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: var(--spacing-xs);
-    font-weight: var(--font-weight-medium);
-    color: var(--gris-carbon);
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: var(--spacing-sm);
-    border: 1px solid var(--gris-claro);
-    border-radius: var(--border-radius-md);
-    font-family: var(--font-family);
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--amarillo-dorado);
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-
-/* Footer */
-.footer {
-    background: var(--gris-carbon);
-    color: var(--blanco-puro);
-    padding: var(--spacing-xxl) 0 var(--spacing-lg);
-}
-
-.servicios-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-lg);
-    margin-top: var(--spacing-xl);
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-@media (max-width: 768px) {
-    .servicios-grid {
-        grid-template-columns: 1fr;
-        max-width: none;
-    }
-}
-.footer-title {
-    font-size: 1.3rem;
-    font-weight: var(--font-weight-semibold);
-    margin-bottom: var(--spacing-md);
-    color: var(--amarillo-cta);
-}
-
-.footer-text {
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.6;
-}
-
-.footer-contact p,
-.footer-horarios p {
-    margin-bottom: var(--spacing-xs);
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.footer-contact i {
-    width: 20px;
-    color: var(--amarillo-cta);
-}
-
-.footer-contact a {
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-contact a:hover {
-    color: var(--amarillo-cta);
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: var(--spacing-lg);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.6);
-}
-
-/* WhatsApp Float Button */
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    background: #25D366;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    box-shadow: var(--shadow-lg);
-    z-index: 1000;
-    transition: all 0.3s ease;
-}
-
-.whatsapp-float:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-}
-
-.whatsapp-float i {
-    font-size: 1.8rem;
-    color: var(--blanco-puro);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav {
-        display: none;
-    }
-    
-    .mobile-menu-btn {
-        display: block;
-    }
-    
-    .header-actions {
-        gap: var(--spacing-sm);
-    }
-    
-    .phone-link span {
-        display: none;
-    }
-    
-    .hero-features {
-        gap: var(--spacing-md);
-    }
-    
-    .hero-actions {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .testimonios-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .servicios-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .nosotros-content {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
-    }
-    
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .contacto-content {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 0 var(--spacing-xs);
-    }
-    
-    .hero-title {
-        font-size: 2rem;
-    }
-    
-    .hero-features {
-        flex-direction: column;
-        gap: var(--spacing-sm);
-    }
-    
-    .servicio-card {
-        padding: var(--spacing-lg);
-    }
-    
-    .contacto-form {
-        padding: var(--spacing-lg);
-    }
-}
-
-/* Animaciones */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.fade-in-up {
-    animation: fadeInUp 0.6s ease-out;
-}
-
-/* Smooth scrolling */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Ajustes para el header fijo */
-section {
-    scroll-margin-top: 80px;
-}
-
-
 /* Contacto Section - 2 Columnas */
 .contacto {
     background: var(--gris-claro);
@@ -1022,8 +681,8 @@ section {
 .horarios-column {
     background: var(--blanco-puro);
     padding: var(--spacing-xl);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-light);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
 }
 
 .horarios-column .section-title {
@@ -1034,7 +693,7 @@ section {
 
 .horarios-table {
     border: 1px solid var(--gris-medio);
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-lg);
     overflow: hidden;
     margin-bottom: var(--spacing-lg);
 }
@@ -1060,7 +719,7 @@ section {
 }
 
 .hora {
-    color: var(--gris-oscuro);
+    color: var(--negro-suave);
 }
 
 .contacto-info {
@@ -1073,7 +732,7 @@ section {
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
-    color: var(--gris-oscuro);
+    color: var(--negro-suave);
 }
 
 .info-item i {
@@ -1086,8 +745,8 @@ section {
 .formulario-column {
     background: var(--blanco-puro);
     padding: var(--spacing-xl);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-light);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
 }
 
 .formulario-column .section-title {
@@ -1098,7 +757,7 @@ section {
 
 .form-subtitle {
     text-align: center;
-    color: var(--gris-oscuro);
+    color: var(--gris-medio);
     margin-bottom: var(--spacing-lg);
     line-height: 1.5;
 }
@@ -1117,8 +776,8 @@ section {
 .contacto-form input,
 .contacto-form textarea {
     padding: var(--spacing-md);
-    border: 2px solid var(--gris-medio);
-    border-radius: var(--border-radius);
+    border: 2px solid #ddd;
+    border-radius: var(--border-radius-md);
     font-size: 1rem;
     font-family: var(--font-family);
     transition: border-color 0.3s ease;
@@ -1140,7 +799,7 @@ section {
     color: var(--gris-carbon);
     border: none;
     padding: var(--spacing-md) var(--spacing-lg);
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-md);
     font-size: 1.1rem;
     font-weight: var(--font-weight-semibold);
     cursor: pointer;
@@ -1152,31 +811,14 @@ section {
 .btn-whatsapp:hover {
     background: #e6ac00;
     transform: translateY(-2px);
-    box-shadow: var(--shadow-medium);
+    box-shadow: var(--shadow-md);
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
-    .contacto-content {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
-    }
-    
-    .horarios-column,
-    .formulario-column {
-        padding: var(--spacing-lg);
-    }
-    
-    .horario-row {
-        padding: var(--spacing-sm) var(--spacing-md);
-    }
-}
-
-/* Ubicación Section - 4 Columnas */
+/* Ubicación Section */
 .ubicacion {
     background: var(--gris-claro);
     padding: var(--spacing-xxl) 0;
-    border-top: 1px solid var(--gris-medio);
+    border-top: 1px solid #e0e0e0;
 }
 
 .ubicacion-header {
@@ -1232,7 +874,7 @@ section {
 }
 
 .ubicacion-text {
-    color: var(--gris-oscuro);
+    color: var(--negro-suave);
     line-height: 1.5;
     margin-bottom: var(--spacing-md);
 }
@@ -1251,7 +893,7 @@ section {
 
 .horarios-list p,
 .rutas-list p {
-    color: var(--gris-oscuro);
+    color: var(--gris-medio);
     margin-bottom: var(--spacing-xs);
     text-align: left;
     font-size: 0.9rem;
@@ -1271,8 +913,8 @@ section {
     margin-bottom: var(--spacing-md);
     background: var(--blanco-puro);
     padding: var(--spacing-sm);
-    border-radius: var(--border-radius);
-    border: 1px solid var(--gris-medio);
+    border-radius: var(--border-radius-md);
+    border: 1px solid #ddd;
 }
 
 .contacto-directo {
@@ -1280,7 +922,7 @@ section {
 }
 
 .contacto-directo p {
-    color: var(--gris-oscuro);
+    color: var(--negro-suave);
     margin-bottom: var(--spacing-xs);
     display: flex;
     align-items: center;
@@ -1302,7 +944,114 @@ section {
     text-decoration: underline;
 }
 
-/* Responsivo para Ubicación */
+/* =========================================
+   FOOTER OPTIMIZADO (GRID SYSTEM & RESPONSIVE)
+   ========================================= */
+
+.footer {
+    background: var(--gris-carbon);
+    color: var(--blanco-puro);
+    padding: var(--spacing-xxl) 0 var(--spacing-lg);
+    font-size: 0.95rem;
+    border-top: 4px solid var(--amarillo-dorado); /* Detalle visual premium */
+}
+
+/* CONTENEDOR DE COLUMNAS */
+.footer-content {
+    display: grid;
+    /* Crea columnas automáticas de mínimo 250px. Si no caben, bajan (Responsive) */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+    align-items: start;
+}
+
+/* SECCIONES INDIVIDUALES (COLUMNAS) */
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+/* CONTROL DE IMAGEN DEL LOGO */
+.footer-logo {
+    max-width: 180px;      /* Restringe el ancho para que no se vea enorme */
+    height: auto;
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); /* Sombra sutil para legibilidad */
+}
+
+/* TÍTULOS */
+.footer-title {
+    color: var(--amarillo-cta);
+    font-size: 1.2rem;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+/* Pequeña línea bajo el título */
+.footer-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--amarillo-dorado);
+}
+
+/* TEXTOS Y PÁRRAFOS */
+.footer-text, 
+.footer-contact p, 
+.footer-horarios p {
+    margin: 0;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85); /* Blanco con leve transparencia para elegancia */
+    margin-bottom: 0.8rem;
+}
+
+/* CONTACTO (Iconos alineados) */
+.footer-contact p {
+    display: flex;
+    align-items: flex-start; /* Alinea icono con la primera línea de texto */
+    gap: var(--spacing-sm);
+}
+
+.footer-contact i {
+    color: var(--amarillo-cta);
+    min-width: 20px;       /* Ancho fijo para alineación perfecta */
+    margin-top: 5px;       /* Ajuste óptico */
+    text-align: center;
+}
+
+.footer-contact a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+    color: var(--amarillo-cta);
+}
+
+/* COPYRIGHT */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: var(--spacing-lg);
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* =========================================
+   AJUSTES MÓVILES (MEDIA QUERY GLOBAL)
+   ========================================= */
+
 @media (max-width: 1024px) {
     .ubicacion-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1311,26 +1060,127 @@ section {
 }
 
 @media (max-width: 768px) {
+    /* Header & Nav */
+    .nav {
+        display: none;
+    }
+    .mobile-menu-btn {
+        display: block;
+    }
+    .header-actions {
+        gap: var(--spacing-sm);
+    }
+    .phone-link span {
+        display: none;
+    }
+
+    /* Grillas Generales */
+    .hero-features,
+    .hero-actions,
+    .testimonios-grid,
+    .servicios-grid,
+    .nosotros-content,
+    .stats-grid,
+    .contacto-content,
     .ubicacion-grid {
         grid-template-columns: 1fr;
-        gap: var(--spacing-md);
+        flex-direction: column;
     }
     
+    /* Ubicación Específico */
+    .ubicacion-header .section-title {
+        font-size: 1.8rem;
+        padding: var(--spacing-xs) var(--spacing-md);
+    }
     .ubicacion-column {
         padding: var(--spacing-md);
     }
-    
-    .ubicacion-header .section-title {
+
+    /* FOOTER MOBILE */
+    .footer {
+        padding: var(--spacing-xl) 0 var(--spacing-md);
+        text-align: center;
+    }
+
+    .footer-content {
+        gap: var(--spacing-xl);
+        grid-template-columns: 1fr; /* Fuerza 1 sola columna en móvil */
+    }
+
+    .footer-section {
+        align-items: center; /* Centra todo el contenido */
+    }
+
+    .footer-title::after {
+        left: 50%;           /* Centra la línea decorativa */
+        transform: translateX(-50%);
+    }
+
+    .footer-contact p {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--spacing-xs);
+    }
+    .hero-title {
         font-size: 2rem;
-        padding: var(--spacing-xs) var(--spacing-md);
     }
-    
-    .ubicacion-icon {
-        width: 60px;
-        height: 60px;
+}
+
+/* WhatsApp Float Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-float i {
+    font-size: 1.8rem;
+    color: var(--blanco-puro);
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
     }
-    
-    .ubicacion-icon i {
-        font-size: 1.5rem;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Ajustes para el header fijo */
+section {
+    scroll-margin-top: 80px;
 }
