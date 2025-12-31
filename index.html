@@ -3,16 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- SEO SERP -->
     <title>Tapicería El Carmen - Tapizados a tu medida en Atlixco, Puebla</title>
-    <meta name="description" content="Tapicería profesional en Atlixco, Puebla. Retapizado de sofás, sillas, cabeceras y muebles a medida. Materiales de calidad y acabados profesionales.">
-    <meta name="keywords" content="tapicería Atlixco, retapizado sofás, tapizado sillas, muebles a medida, tapicería Puebla">
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Tapicería profesional en Atlixco, Puebla. Retapizado de sofás, sillas y muebles a medida.">
+    <meta name="keywords" content="tapicería Atlixco, tapizados a medida, retapizado sofás, tapizado sillas, muebles a medida">
+    <link rel="canonical" href="https://tapiceriaelcarmen.com/">
+   <!-- SOCIAL MEDIA (Open Graph) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tapiceriaelcarmen.com/">
+    <meta property="og:title" content="Tapicería El Carmen | Retapizado Profesional en Atlixco">
+    <meta property="og:description" content="Tapizado profesional y personalizado de salas, sillas y asientos para motos en Atlixco.">
+     <!-- IMAGEN SOCIAL REINSERTADA (CRÍTICO) -->
+    <meta property="og:image" content="https://tapiceriaelcarmen.com/assets/img/taller-tapiceria-elcarmen.jpg">
+     <!-- PRE-CONNECTION (VELOCIDAD) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <!-- ESTILOS Y FUENTES -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- FAVICONS -->
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96x96.png">
     <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
+    <!-- SCHEMA JSON-LD (CORREGIDO) -->
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Tapicería El Carmen",
+        "image": "https://tapiceriaelcarmen.com/assets/img/tapiceriaelcarmen-logo.png",
+        "@id": "https://tapiceriaelcarmen.com",
+        "url": "https://tapiceriaelcarmen.com",
+        "telephone": "+522441130181",
+        "priceRange": "$$",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Calzada del Carmen 1112, Hogar del Obrero",
+            "addressLocality": "Atlixco",
+            "addressRegion": "PUE",
+            "postalCode": "74260",
+            "addressCountry": "MX"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 18.9058,
+            "longitude": -98.4308
+        },
+        "openingHoursSpecification": [
+            {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+            ],
+            "opens": "08:00",
+            "closes": "19:00"
+            },
+            {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "08:00",
+            "closes": "16:00"
+            }
+        ],
+        "sameAs": [
+            "https://www.facebook.com/FastTapiceria/"
+        ],
+        "serviceArea": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": 18.9058,
+            "longitude": -98.4308
+            },
+            "geoRadius": "20000"
+        },
+        "description": "Expertos en tapicería y retapizado de muebles en Atlixco, Puebla. Restauración de salas, sillas y fabricación a medida."
+        }
+    </script>
 </head>
 <body>
     <!-- Header -->
@@ -20,7 +93,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <img src="images/logo-nuevo-moderno.png" alt="Tapicería El Carmen" class="logo-img">
+                    <img src="/assets/img/tapiceriaelcarmen-logo.png" alt="Tapicería El Carmen" class="logo-img">
                 </div>
                 <nav class="nav">
                     <a href="#inicio" class="nav-link">Inicio</a>
@@ -241,7 +314,7 @@
         <div class="container">
             <div class="nosotros-content">
                 <div class="nosotros-image">
-                    <img src="images/taller-tapiceria.jpg" alt="Taller de Tapicería El Carmen" class="nosotros-img">
+                    <img src="/assets/img/taller-tapiceria-elcarmen.jpg" alt="Interior del taller de Tapicería El Carmen en Atlixco" class="nosotros-img" loading="lazy">
                 </div>
                 <div class="nosotros-text">
                     <h2 class="section-title">El Carmen, Tapicería en Atlixco</h2>
@@ -462,20 +535,35 @@
         </div>
     </section>
 
-    <!-- Footer -->
+<!-- Footer Optimizado -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
+                    <!-- SOLUCIÓN: Inserción explícita del logo -->
+                    <img src="/assets/img/tapiceriaelcarmen-logo.png" alt="Logo Tapicería El Carmen Atlixco" class="footer-logo" width="150" style="margin-bottom: 1rem;">
+                    
                     <h3 class="footer-title">Tapicería El Carmen</h3>
-                    <p class="footer-text">Tapizados hechos a tu medida, sin complicaciones. Renovamos tus muebles con acabados profesionales y materiales de calidad.</p>
+                    <p class="footer-text">Tapizados hechos a tu medida en Atlixco. Renovamos tus muebles con acabados profesionales.</p>
                 </div>
                 <div class="footer-section">
                     <h3 class="footer-title">Contacto</h3>
                     <div class="footer-contact">
-                        <p><i class="fas fa-map-marker-alt"></i> Calz del Carmen 1112, Hogar del Obrero, 74260 Atlixco, Pue.</p>
-                        <p><i class="fas fa-phone"></i> 244 113 0181</p>
-                        <p><i class="fab fa-whatsapp"></i> <a href="#" onclick="abrirWhatsApp()">WhatsApp</a></p>
+                        <!-- Enlaces clickeables para UX Móvil -->
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i> 
+                            <a href="https://maps.google.com/?q=Calz+del+Carmen+1112,+Hogar+del+Obrero,+74260+Atlixco,+Pue" target="_blank" style="color:inherit; text-decoration:none;">
+                                Calz del Carmen 1112, Atlixco
+                            </a>
+                        </p>
+                        <p>
+                            <i class="fas fa-phone"></i> 
+                            <a href="tel:2441130181" style="color:inherit; text-decoration:none;">244 113 0181</a>
+                        </p>
+                        <p>
+                            <i class="fab fa-whatsapp"></i> 
+                            <a href="#" onclick="abrirWhatsApp()" style="color:inherit; text-decoration:none;">WhatsApp Directo</a>
+                        </p>
                     </div>
                 </div>
                 <div class="footer-section">
@@ -488,7 +576,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Tapicería El Carmen. Todos los derechos reservados.</p>
+                <p>&copy; 2024 Tapicería El Carmen | Expertos en retapizado en Puebla.</p>
             </div>
         </div>
     </footer>
