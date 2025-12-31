@@ -1,6 +1,4 @@
-/* =========================================
-   RESET Y VARIABLES GLOBALES
-   ========================================= */
+/* Reset y Variables */
 * {
     margin: 0;
     padding: 0;
@@ -53,9 +51,7 @@
     --border-radius-xl: 16px;
 }
 
-/* =========================================
-   BASE Y LAYOUT
-   ========================================= */
+/* Base */
 body {
     font-family: var(--font-family);
     line-height: 1.6;
@@ -69,9 +65,7 @@ body {
     padding: 0 var(--spacing-sm);
 }
 
-/* =========================================
-   HEADER Y NAVEGACIÓN
-   ========================================= */
+/* Header */
 .header {
     background: var(--blanco-puro);
     box-shadow: var(--shadow-sm);
@@ -127,20 +121,15 @@ body {
     width: 100%;
 }
 
-/* NUEVO: ESTILO PARA EL BOTÓN DE PRESUPUESTO EN EL MENÚ */
-.presupuesto-nav {
-    color: var(--amarillo-cta) !important;
-    font-weight: var(--font-weight-bold);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: color 0.3s ease;
+.phone-nav {
+    color: var(--amarillo-dorado) !important;
+    font-weight: var(--font-weight-semibold);
 }
 
-.presupuesto-nav:hover {
+.phone-nav:hover {
     color: var(--naranja-vibrante) !important;
 }
 
-/* ELEMENTOS DEL HEADER (ICONOS, BOTONES MÓVIL) */
 .header-actions {
     display: flex;
     align-items: center;
@@ -170,9 +159,7 @@ body {
     cursor: pointer;
 }
 
-/* =========================================
-   COMPONENTES (BOTONES)
-   ========================================= */
+/* Botones */
 .btn-primary {
     display: inline-flex;
     align-items: center;
@@ -223,9 +210,7 @@ body {
     justify-content: center;
 }
 
-/* =========================================
-   HERO SECTION
-   ========================================= */
+/* Hero Section */
 .hero {
     position: relative;
     min-height: 100vh;
@@ -241,6 +226,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
+    /* CORRECCIÓN RUTA IMAGEN */
     background-image: url('/assets/img/hero-tapiceria.jpg');
     background-size: cover;
     background-position: center;
@@ -305,9 +291,7 @@ body {
     flex-wrap: wrap;
 }
 
-/* =========================================
-   TESTIMONIOS
-   ========================================= */
+/* Testimonios */
 .testimonios {
     padding: var(--spacing-xxl) 0;
     background: var(--blanco-puro);
@@ -343,6 +327,12 @@ body {
     color: var(--gris-carbon);
 }
 
+.rating-count {
+    font-size: 0.9rem;
+    color: var(--gris-medio);
+}
+
+/* Carrusel de Testimonios */
 .testimonios-carousel {
     position: relative;
     max-width: 1000px;
@@ -419,6 +409,7 @@ body {
     font-size: 0.9rem;
 }
 
+/* Controles del Carrusel */
 .carousel-controls {
     display: flex;
     justify-content: center;
@@ -448,6 +439,13 @@ body {
     box-shadow: var(--shadow-md);
 }
 
+.carousel-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Indicadores del Carrusel */
 .carousel-indicators {
     display: flex;
     justify-content: center;
@@ -469,9 +467,7 @@ body {
     transform: scale(1.2);
 }
 
-/* =========================================
-   SERVICIOS
-   ========================================= */
+/* Servicios */
 .servicios {
     padding: var(--spacing-xxl) 0;
     background: var(--gris-claro);
@@ -550,9 +546,7 @@ body {
     line-height: 1.6;
 }
 
-/* =========================================
-   NOSOTROS
-   ========================================= */
+/* Nosotros */
 .nosotros {
     padding: var(--spacing-xxl) 0;
     background: var(--blanco-puro);
@@ -606,9 +600,7 @@ body {
     margin-top: var(--spacing-xs);
 }
 
-/* =========================================
-   FAQ
-   ========================================= */
+/* FAQ */
 .faq {
     padding: var(--spacing-xxl) 0;
     background: var(--blanco-puro);
@@ -672,9 +664,7 @@ body {
     line-height: 1.6;
 }
 
-/* =========================================
-   CONTACTO (2 Columnas)
-   ========================================= */
+/* Contacto Section - 2 Columnas */
 .contacto {
     background: var(--gris-claro);
     padding: var(--spacing-xxl) 0;
@@ -824,9 +814,7 @@ body {
     box-shadow: var(--shadow-md);
 }
 
-/* =========================================
-   UBICACIÓN SECTION
-   ========================================= */
+/* Ubicación Section */
 .ubicacion {
     background: var(--gris-claro);
     padding: var(--spacing-xxl) 0;
@@ -957,7 +945,7 @@ body {
 }
 
 /* =========================================
-   FOOTER OPTIMIZADO
+   FOOTER OPTIMIZADO (GRID SYSTEM & RESPONSIVE)
    ========================================= */
 
 .footer {
@@ -965,31 +953,36 @@ body {
     color: var(--blanco-puro);
     padding: var(--spacing-xxl) 0 var(--spacing-lg);
     font-size: 0.95rem;
-    border-top: 4px solid var(--amarillo-dorado);
+    border-top: 4px solid var(--amarillo-dorado); /* Detalle visual premium */
 }
 
+/* CONTENEDOR DE COLUMNAS */
 .footer-content {
     display: grid;
+    /* Crea columnas automáticas de mínimo 250px. Si no caben, bajan (Responsive) */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: var(--spacing-xl);
     margin-bottom: var(--spacing-xl);
     align-items: start;
 }
 
+/* SECCIONES INDIVIDUALES (COLUMNAS) */
 .footer-section {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
 }
 
+/* CONTROL DE IMAGEN DEL LOGO */
 .footer-logo {
-    max-width: 180px;
+    max-width: 180px;      /* Restringe el ancho para que no se vea enorme */
     height: auto;
     display: block;
     margin-bottom: var(--spacing-sm);
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); /* Sombra sutil para legibilidad */
 }
 
+/* TÍTULOS */
 .footer-title {
     color: var(--amarillo-cta);
     font-size: 1.2rem;
@@ -1001,6 +994,7 @@ body {
     padding-bottom: 0.5rem;
 }
 
+/* Pequeña línea bajo el título */
 .footer-title::after {
     content: '';
     position: absolute;
@@ -1011,25 +1005,27 @@ body {
     background: var(--amarillo-dorado);
 }
 
+/* TEXTOS Y PÁRRAFOS */
 .footer-text, 
 .footer-contact p, 
 .footer-horarios p {
     margin: 0;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.85); /* Blanco con leve transparencia para elegancia */
     margin-bottom: 0.8rem;
 }
 
+/* CONTACTO (Iconos alineados) */
 .footer-contact p {
     display: flex;
-    align-items: flex-start;
+    align-items: flex-start; /* Alinea icono con la primera línea de texto */
     gap: var(--spacing-sm);
 }
 
 .footer-contact i {
     color: var(--amarillo-cta);
-    min-width: 20px;
-    margin-top: 5px;
+    min-width: 20px;       /* Ancho fijo para alineación perfecta */
+    margin-top: 5px;       /* Ajuste óptico */
     text-align: center;
 }
 
@@ -1043,6 +1039,7 @@ body {
     color: var(--amarillo-cta);
 }
 
+/* COPYRIGHT */
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: var(--spacing-lg);
@@ -1052,7 +1049,7 @@ body {
 }
 
 /* =========================================
-   MEDIA QUERIES (RESPONSIVE)
+   AJUSTES MÓVILES (MEDIA QUERY GLOBAL)
    ========================================= */
 
 @media (max-width: 1024px) {
@@ -1062,42 +1059,27 @@ body {
     }
 }
 
-/* TABLETS Y MÓVILES (CRÍTICO: AQUÍ ESTÁ EL ARREGLO DEL MENÚ) */
 @media (max-width: 768px) {
-    /* 1. Corrección del Menú Móvil */
+/* 1. Ocultar la navegación completamente en móvil */
     .nav {
-        display: none; /* Oculto por defecto */
-        position: absolute;
-        top: 100%; /* Debajo del header */
-        left: 0;
-        width: 100%;
-        background: var(--blanco-puro);
-        flex-direction: column; /* Lista vertical */
-        padding: var(--spacing-md);
-        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-        border-top: 1px solid var(--gris-claro);
-        gap: var(--spacing-md);
-        animation: slideDown 0.3s ease forwards;
-    }
-
-    /* Regla que faltaba para mostrarlo */
-    .nav.mobile-active {
-        display: flex;
-    }
-
-    .mobile-menu-btn {
-        display: block;
-    }
-
-    .header-actions {
-        gap: var(--spacing-sm);
+        display: none !important; 
     }
     
-    .phone-link span {
-        display: none;
+    /* 2. Asegurar que el botón hamburguesa no ocupe espacio (si quedara en caché) */
+    .mobile-menu-btn {
+        display: none !important;
     }
 
-    /* Grillas a 1 columna */
+    /* 3. Ajustar espaciado del Header */
+    .header-content {
+        padding: 0.5rem 0; /* Un poco más compacto */
+    }
+
+    /* 4. Ajustar el botón de teléfono/acción para que se vea bien */
+    .header-actions {
+        gap: 0;
+    }
+    /* Grillas Generales */
     .hero-features,
     .hero-actions,
     .testimonios-grid,
@@ -1105,11 +1087,13 @@ body {
     .nosotros-content,
     .stats-grid,
     .contacto-content,
-    .ubicacion-grid {
+    .ubicacion-grid
+    .footer-content {
         grid-template-columns: 1fr;
         flex-direction: column;
     }
     
+    /* Ubicación Específico */
     .ubicacion-header .section-title {
         font-size: 1.8rem;
         padding: var(--spacing-xs) var(--spacing-md);
@@ -1118,7 +1102,7 @@ body {
         padding: var(--spacing-md);
     }
 
-    /* Footer Mobile */
+    /* FOOTER MOBILE */
     .footer {
         padding: var(--spacing-xl) 0 var(--spacing-md);
         text-align: center;
@@ -1126,15 +1110,15 @@ body {
 
     .footer-content {
         gap: var(--spacing-xl);
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Fuerza 1 sola columna en móvil */
     }
 
     .footer-section {
-        align-items: center;
+        align-items: center; /* Centra todo el contenido */
     }
 
     .footer-title::after {
-        left: 50%;
+        left: 50%;           /* Centra la línea decorativa */
         transform: translateX(-50%);
     }
 
@@ -1152,16 +1136,6 @@ body {
         font-size: 2rem;
     }
 }
-
-/* Animación del menú móvil */
-@keyframes slideDown {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* =========================================
-   EXTRAS
-   ========================================= */
 
 /* WhatsApp Float Button */
 .whatsapp-float {
@@ -1191,7 +1165,7 @@ body {
     color: var(--blanco-puro);
 }
 
-/* Animaciones de scroll */
+/* Animaciones */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -1207,11 +1181,12 @@ body {
     animation: fadeInUp 0.6s ease-out;
 }
 
+/* Smooth scrolling */
 html {
     scroll-behavior: smooth;
 }
 
-/* Ajuste para header fijo */
+/* Ajustes para el header fijo */
 section {
     scroll-margin-top: 80px;
 }
