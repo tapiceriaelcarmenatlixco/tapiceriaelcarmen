@@ -1,4 +1,6 @@
-/* Reset y Variables */
+/* =========================================
+   RESET Y VARIABLES GLOBALES
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -51,7 +53,9 @@
     --border-radius-xl: 16px;
 }
 
-/* Base */
+/* =========================================
+   BASE Y LAYOUT
+   ========================================= */
 body {
     font-family: var(--font-family);
     line-height: 1.6;
@@ -65,7 +69,9 @@ body {
     padding: 0 var(--spacing-sm);
 }
 
-/* Header */
+/* =========================================
+   HEADER Y NAVEGACIÓN
+   ========================================= */
 .header {
     background: var(--blanco-puro);
     box-shadow: var(--shadow-sm);
@@ -121,15 +127,20 @@ body {
     width: 100%;
 }
 
-.phone-nav {
-    color: var(--amarillo-dorado) !important;
-    font-weight: var(--font-weight-semibold);
+/* NUEVO: ESTILO PARA EL BOTÓN DE PRESUPUESTO EN EL MENÚ */
+.presupuesto-nav {
+    color: var(--amarillo-cta) !important;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
 }
 
-.phone-nav:hover {
+.presupuesto-nav:hover {
     color: var(--naranja-vibrante) !important;
 }
 
+/* ELEMENTOS DEL HEADER (ICONOS, BOTONES MÓVIL) */
 .header-actions {
     display: flex;
     align-items: center;
@@ -159,7 +170,9 @@ body {
     cursor: pointer;
 }
 
-/* Botones */
+/* =========================================
+   COMPONENTES (BOTONES)
+   ========================================= */
 .btn-primary {
     display: inline-flex;
     align-items: center;
@@ -210,7 +223,9 @@ body {
     justify-content: center;
 }
 
-/* Hero Section */
+/* =========================================
+   HERO SECTION
+   ========================================= */
 .hero {
     position: relative;
     min-height: 100vh;
@@ -226,7 +241,6 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    /* CORRECCIÓN RUTA IMAGEN */
     background-image: url('/assets/img/hero-tapiceria.jpg');
     background-size: cover;
     background-position: center;
@@ -291,7 +305,9 @@ body {
     flex-wrap: wrap;
 }
 
-/* Testimonios */
+/* =========================================
+   TESTIMONIOS
+   ========================================= */
 .testimonios {
     padding: var(--spacing-xxl) 0;
     background: var(--blanco-puro);
@@ -327,12 +343,6 @@ body {
     color: var(--gris-carbon);
 }
 
-.rating-count {
-    font-size: 0.9rem;
-    color: var(--gris-medio);
-}
-
-/* Carrusel de Testimonios */
 .testimonios-carousel {
     position: relative;
     max-width: 1000px;
@@ -409,7 +419,6 @@ body {
     font-size: 0.9rem;
 }
 
-/* Controles del Carrusel */
 .carousel-controls {
     display: flex;
     justify-content: center;
@@ -439,13 +448,6 @@ body {
     box-shadow: var(--shadow-md);
 }
 
-.carousel-btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    transform: none;
-}
-
-/* Indicadores del Carrusel */
 .carousel-indicators {
     display: flex;
     justify-content: center;
@@ -467,7 +469,9 @@ body {
     transform: scale(1.2);
 }
 
-/* Servicios */
+/* =========================================
+   SERVICIOS
+   ========================================= */
 .servicios {
     padding: var(--spacing-xxl) 0;
     background: var(--gris-claro);
@@ -546,7 +550,9 @@ body {
     line-height: 1.6;
 }
 
-/* Nosotros */
+/* =========================================
+   NOSOTROS
+   ========================================= */
 .nosotros {
     padding: var(--spacing-xxl) 0;
     background: var(--blanco-puro);
@@ -600,7 +606,9 @@ body {
     margin-top: var(--spacing-xs);
 }
 
-/* FAQ */
+/* =========================================
+   FAQ
+   ========================================= */
 .faq {
     padding: var(--spacing-xxl) 0;
     background: var(--blanco-puro);
@@ -664,7 +672,9 @@ body {
     line-height: 1.6;
 }
 
-/* Contacto Section - 2 Columnas */
+/* =========================================
+   CONTACTO (2 Columnas)
+   ========================================= */
 .contacto {
     background: var(--gris-claro);
     padding: var(--spacing-xxl) 0;
@@ -814,7 +824,9 @@ body {
     box-shadow: var(--shadow-md);
 }
 
-/* Ubicación Section */
+/* =========================================
+   UBICACIÓN SECTION
+   ========================================= */
 .ubicacion {
     background: var(--gris-claro);
     padding: var(--spacing-xxl) 0;
@@ -945,7 +957,7 @@ body {
 }
 
 /* =========================================
-   FOOTER OPTIMIZADO (GRID SYSTEM & RESPONSIVE)
+   FOOTER OPTIMIZADO
    ========================================= */
 
 .footer {
@@ -953,36 +965,31 @@ body {
     color: var(--blanco-puro);
     padding: var(--spacing-xxl) 0 var(--spacing-lg);
     font-size: 0.95rem;
-    border-top: 4px solid var(--amarillo-dorado); /* Detalle visual premium */
+    border-top: 4px solid var(--amarillo-dorado);
 }
 
-/* CONTENEDOR DE COLUMNAS */
 .footer-content {
     display: grid;
-    /* Crea columnas automáticas de mínimo 250px. Si no caben, bajan (Responsive) */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: var(--spacing-xl);
     margin-bottom: var(--spacing-xl);
     align-items: start;
 }
 
-/* SECCIONES INDIVIDUALES (COLUMNAS) */
 .footer-section {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
 }
 
-/* CONTROL DE IMAGEN DEL LOGO */
 .footer-logo {
-    max-width: 180px;      /* Restringe el ancho para que no se vea enorme */
+    max-width: 180px;
     height: auto;
     display: block;
     margin-bottom: var(--spacing-sm);
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); /* Sombra sutil para legibilidad */
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
 }
 
-/* TÍTULOS */
 .footer-title {
     color: var(--amarillo-cta);
     font-size: 1.2rem;
@@ -994,7 +1001,6 @@ body {
     padding-bottom: 0.5rem;
 }
 
-/* Pequeña línea bajo el título */
 .footer-title::after {
     content: '';
     position: absolute;
@@ -1005,27 +1011,25 @@ body {
     background: var(--amarillo-dorado);
 }
 
-/* TEXTOS Y PÁRRAFOS */
 .footer-text, 
 .footer-contact p, 
 .footer-horarios p {
     margin: 0;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.85); /* Blanco con leve transparencia para elegancia */
+    color: rgba(255, 255, 255, 0.85);
     margin-bottom: 0.8rem;
 }
 
-/* CONTACTO (Iconos alineados) */
 .footer-contact p {
     display: flex;
-    align-items: flex-start; /* Alinea icono con la primera línea de texto */
+    align-items: flex-start;
     gap: var(--spacing-sm);
 }
 
 .footer-contact i {
     color: var(--amarillo-cta);
-    min-width: 20px;       /* Ancho fijo para alineación perfecta */
-    margin-top: 5px;       /* Ajuste óptico */
+    min-width: 20px;
+    margin-top: 5px;
     text-align: center;
 }
 
@@ -1039,7 +1043,6 @@ body {
     color: var(--amarillo-cta);
 }
 
-/* COPYRIGHT */
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: var(--spacing-lg);
@@ -1049,7 +1052,7 @@ body {
 }
 
 /* =========================================
-   AJUSTES MÓVILES (MEDIA QUERY GLOBAL)
+   MEDIA QUERIES (RESPONSIVE)
    ========================================= */
 
 @media (max-width: 1024px) {
@@ -1059,22 +1062,42 @@ body {
     }
 }
 
+/* TABLETS Y MÓVILES (CRÍTICO: AQUÍ ESTÁ EL ARREGLO DEL MENÚ) */
 @media (max-width: 768px) {
-    /* Header & Nav */
+    /* 1. Corrección del Menú Móvil */
     .nav {
-        display: none;
+        display: none; /* Oculto por defecto */
+        position: absolute;
+        top: 100%; /* Debajo del header */
+        left: 0;
+        width: 100%;
+        background: var(--blanco-puro);
+        flex-direction: column; /* Lista vertical */
+        padding: var(--spacing-md);
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        border-top: 1px solid var(--gris-claro);
+        gap: var(--spacing-md);
+        animation: slideDown 0.3s ease forwards;
     }
+
+    /* Regla que faltaba para mostrarlo */
+    .nav.mobile-active {
+        display: flex;
+    }
+
     .mobile-menu-btn {
         display: block;
     }
+
     .header-actions {
         gap: var(--spacing-sm);
     }
+    
     .phone-link span {
         display: none;
     }
 
-    /* Grillas Generales */
+    /* Grillas a 1 columna */
     .hero-features,
     .hero-actions,
     .testimonios-grid,
@@ -1087,7 +1110,6 @@ body {
         flex-direction: column;
     }
     
-    /* Ubicación Específico */
     .ubicacion-header .section-title {
         font-size: 1.8rem;
         padding: var(--spacing-xs) var(--spacing-md);
@@ -1096,7 +1118,7 @@ body {
         padding: var(--spacing-md);
     }
 
-    /* FOOTER MOBILE */
+    /* Footer Mobile */
     .footer {
         padding: var(--spacing-xl) 0 var(--spacing-md);
         text-align: center;
@@ -1104,15 +1126,15 @@ body {
 
     .footer-content {
         gap: var(--spacing-xl);
-        grid-template-columns: 1fr; /* Fuerza 1 sola columna en móvil */
+        grid-template-columns: 1fr;
     }
 
     .footer-section {
-        align-items: center; /* Centra todo el contenido */
+        align-items: center;
     }
 
     .footer-title::after {
-        left: 50%;           /* Centra la línea decorativa */
+        left: 50%;
         transform: translateX(-50%);
     }
 
@@ -1130,6 +1152,16 @@ body {
         font-size: 2rem;
     }
 }
+
+/* Animación del menú móvil */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   EXTRAS
+   ========================================= */
 
 /* WhatsApp Float Button */
 .whatsapp-float {
@@ -1159,7 +1191,7 @@ body {
     color: var(--blanco-puro);
 }
 
-/* Animaciones */
+/* Animaciones de scroll */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -1175,12 +1207,11 @@ body {
     animation: fadeInUp 0.6s ease-out;
 }
 
-/* Smooth scrolling */
 html {
     scroll-behavior: smooth;
 }
 
-/* Ajustes para el header fijo */
+/* Ajuste para header fijo */
 section {
     scroll-margin-top: 80px;
 }
