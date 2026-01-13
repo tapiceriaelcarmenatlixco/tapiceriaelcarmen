@@ -742,7 +742,7 @@ body {
 }
 
 /* Columna de Horarios */
-.horarios-column {
+/*.horarios-column {
     background: var(--blanco-puro);
     padding: var(--spacing-xl);
     border-radius: var(--border-radius-lg);
@@ -755,7 +755,7 @@ body {
     color: var(--gris-carbon);
 }
 
-/*
+
 .horarios-table {
     border: 1px solid var(--gris-medio);
     border-radius: var(--border-radius-lg);
