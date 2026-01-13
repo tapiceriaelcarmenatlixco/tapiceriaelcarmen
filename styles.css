@@ -6,9 +6,12 @@
 }
 
 :root {
+    /* --- PALETA DE COLORES UNIFICADA --- */
+    /* Se han consolidado todos los tonos de amarillo/naranja en dos variables principales */
+    
     /* Colores principales */
-    --naranja-vibrante: #E67E22;
-    --amarillo-dorado: #F39C12;
+    --amarillo-principal: #FFC107; /* Amarillo brillante para CTAs, iconos y acentos. (Antes --amarillo-cta) */
+    --amarillo-hover: #F39C12;     /* Amarillo oscuro/dorado para estados hover/focus. (Antes --amarillo-dorado) */
     --verde-azulado: #16A085;
     --gris-carbon: #2C3E50;
     
@@ -17,11 +20,6 @@
     --gris-claro: #F8F9FA;
     --gris-medio: #6C757D;
     --negro-suave: #212529;
-    
-    /* Colores de acento */
-    --amarillo-cta: #FFC107;
-    --naranja-hover: #D35400;
-    --verde-hover: #138D75;
     
     /* Tipografía */
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -103,7 +101,7 @@ body {
 }
 
 .nav-link:hover {
-    color: var(--amarillo-dorado);
+    color: var(--amarillo-hover);
 }
 
 .nav-link::after {
@@ -113,21 +111,12 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--amarillo-dorado);
+    background: var(--amarillo-hover);
     transition: width 0.3s ease;
 }
 
 .nav-link:hover::after {
     width: 100%;
-}
-
-.phone-nav {
-    color: var(--amarillo-dorado) !important;
-    font-weight: var(--font-weight-semibold);
-}
-
-.phone-nav:hover {
-    color: var(--naranja-vibrante) !important;
 }
 
 .header-actions {
@@ -147,7 +136,7 @@ body {
 }
 
 .phone-link:hover {
-    color: var(--amarillo-dorado);
+    color: var(--amarillo-hover);
 }
 
 .mobile-menu-btn {
@@ -165,7 +154,7 @@ body {
     align-items: center;
     gap: var(--spacing-xs);
     padding: var(--spacing-sm) var(--spacing-md);
-    background: var(--amarillo-cta);
+    background: var(--amarillo-principal);
     color: var(--negro-suave);
     text-decoration: none;
     border-radius: var(--border-radius-md);
@@ -176,7 +165,7 @@ body {
 }
 
 .btn-primary:hover {
-    background: var(--amarillo-dorado);
+    background: var(--amarillo-hover);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
@@ -280,7 +269,7 @@ body {
 }
 
 .feature-item i {
-    color: var(--amarillo-cta);
+    color: var(--amarillo-principal);
     font-size: 1.2rem;
 }
 
@@ -318,7 +307,7 @@ body {
 }
 
 .stars i {
-    color: var(--amarillo-cta);
+    color: var(--amarillo-principal);
     font-size: 1.2rem;
 }
 
@@ -380,7 +369,7 @@ body {
 }
 
 .testimonio-stars i {
-    color: var(--amarillo-cta);
+    color: var(--amarillo-principal);
     font-size: 1rem;
 }
 
@@ -421,7 +410,7 @@ body {
     width: 50px;
     height: 50px;
     border: none;
-    background: var(--amarillo-cta);
+    background: var(--amarillo-principal);
     color: var(--negro-suave);
     border-radius: 50%;
     cursor: pointer;
@@ -434,7 +423,7 @@ body {
 }
 
 .carousel-btn:hover {
-    background: var(--amarillo-dorado);
+    background: var(--amarillo-hover);
     transform: scale(1.1);
     box-shadow: var(--shadow-md);
 }
@@ -463,7 +452,7 @@ body {
 }
 
 .carousel-indicator.active {
-    background: var(--amarillo-cta);
+    background: var(--amarillo-principal);
     transform: scale(1.2);
 }
 
@@ -515,7 +504,7 @@ body {
 .servicio-icon {
     width: 80px;
     height: 80px;
-    background: var(--amarillo-cta);
+    background: var(--amarillo-principal);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -525,7 +514,7 @@ body {
 }
 
 .servicio-card:hover .servicio-icon {
-    background: var(--amarillo-dorado);
+    background: var(--amarillo-hover);
     transform: scale(1.1);
 }
 
@@ -590,7 +579,7 @@ body {
 .stat-number {
     font-size: 2rem;
     font-weight: var(--font-weight-bold);
-    color: var(--amarillo-dorado);
+    color: var(--amarillo-hover);
     display: block;
 }
 
@@ -641,7 +630,7 @@ body {
 
 .faq-question i {
     transition: transform 0.3s ease;
-    color: var(--amarillo-dorado);
+    color: var(--amarillo-hover);
 }
 
 .faq-item.active .faq-question i {
@@ -736,7 +725,7 @@ body {
 }
 
 .info-item i {
-    color: var(--amarillo-dorado);
+    color: var(--amarillo-hover);
     width: 20px;
     text-align: center;
 }
@@ -786,7 +775,7 @@ body {
 .contacto-form input:focus,
 .contacto-form textarea:focus {
     outline: none;
-    border-color: var(--amarillo-dorado);
+    border-color: var(--amarillo-hover);
 }
 
 .contacto-form textarea {
@@ -795,7 +784,7 @@ body {
 }
 
 .btn-whatsapp {
-    background: var(--amarillo-dorado);
+    background: var(--amarillo-principal);
     color: var(--gris-carbon);
     border: none;
     padding: var(--spacing-md) var(--spacing-lg);
@@ -809,7 +798,7 @@ body {
 }
 
 .btn-whatsapp:hover {
-    background: #e6ac00;
+    background: var(--amarillo-hover);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
@@ -849,7 +838,7 @@ body {
 }
 
 .ubicacion-icon {
-    background: var(--amarillo-dorado);
+    background: var(--amarillo-principal);
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -880,14 +869,14 @@ body {
 }
 
 .ubicacion-link {
-    color: var(--amarillo-dorado);
+    color: var(--amarillo-principal);
     text-decoration: none;
     font-weight: var(--font-weight-medium);
     transition: color 0.3s ease;
 }
 
 .ubicacion-link:hover {
-    color: #e6ac00;
+    color: var(--amarillo-hover);
     text-decoration: underline;
 }
 
@@ -900,7 +889,7 @@ body {
 }
 
 .rutas-list p i {
-    color: var(--amarillo-dorado);
+    color: var(--amarillo-principal);
     margin-right: var(--spacing-xs);
     width: 12px;
 }
@@ -931,16 +920,18 @@ body {
 }
 
 .contacto-directo i {
-    color: var(--amarillo-dorado);
+    color: var(--amarillo-principal);
 }
 
 .contacto-directo a {
-    color: var(--amarillo-dorado);
+    color: var(--amarillo-principal);
     text-decoration: none;
     font-weight: var(--font-weight-medium);
+    transition: color 0.3s ease;
 }
 
 .contacto-directo a:hover {
+    color: var(--amarillo-hover);
     text-decoration: underline;
 }
 
@@ -953,13 +944,12 @@ body {
     color: var(--blanco-puro);
     padding: var(--spacing-xxl) 0 var(--spacing-lg);
     font-size: 0.95rem;
-    border-top: 4px solid var(--amarillo-dorado); /* Detalle visual premium */
+    border-top: 4px solid var(--amarillo-hover);
 }
 
 /* CONTENEDOR DE COLUMNAS */
 .footer-content {
     display: grid;
-    /* Crea columnas automáticas de mínimo 250px. Si no caben, bajan (Responsive) */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: var(--spacing-xl);
     margin-bottom: var(--spacing-xl);
@@ -975,16 +965,16 @@ body {
 
 /* CONTROL DE IMAGEN DEL LOGO */
 .footer-logo {
-    max-width: 180px;      /* Restringe el ancho para que no se vea enorme */
+    max-width: 180px;
     height: auto;
     display: block;
     margin-bottom: var(--spacing-sm);
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); /* Sombra sutil para legibilidad */
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
 }
 
 /* TÍTULOS */
 .footer-title {
-    color: var(--amarillo-cta);
+    color: var(--amarillo-principal);
     font-size: 1.2rem;
     font-weight: var(--font-weight-bold);
     margin-bottom: var(--spacing-sm);
@@ -994,7 +984,6 @@ body {
     padding-bottom: 0.5rem;
 }
 
-/* Pequeña línea bajo el título */
 .footer-title::after {
     content: '';
     position: absolute;
@@ -1002,7 +991,7 @@ body {
     bottom: 0;
     width: 40px;
     height: 2px;
-    background: var(--amarillo-dorado);
+    background: var(--amarillo-principal);
 }
 
 /* TEXTOS Y PÁRRAFOS */
@@ -1011,21 +1000,21 @@ body {
 .footer-horarios p {
     margin: 0;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.85); /* Blanco con leve transparencia para elegancia */
+    color: rgba(255, 255, 255, 0.85);
     margin-bottom: 0.8rem;
 }
 
 /* CONTACTO (Iconos alineados) */
 .footer-contact p {
     display: flex;
-    align-items: flex-start; /* Alinea icono con la primera línea de texto */
+    align-items: flex-start;
     gap: var(--spacing-sm);
 }
 
 .footer-contact i {
-    color: var(--amarillo-cta);
-    min-width: 20px;       /* Ancho fijo para alineación perfecta */
-    margin-top: 5px;       /* Ajuste óptico */
+    color: var(--amarillo-principal);
+    min-width: 20px;
+    margin-top: 5px;
     text-align: center;
 }
 
@@ -1036,7 +1025,7 @@ body {
 }
 
 .footer-contact a:hover {
-    color: var(--amarillo-cta);
+    color: var(--amarillo-principal);
 }
 
 /* COPYRIGHT */
@@ -1060,7 +1049,7 @@ body {
 }
 
 @media (max-width: 768px) {
-/* 1. Ocultar la navegación completamente en móvil */
+    /* 1. Ocultar la navegación completamente en móvil */
     .nav {
         display: none !important; 
     }
@@ -1072,7 +1061,7 @@ body {
 
     /* 3. Ajustar espaciado del Header */
     .header-content {
-        padding: 0.5rem 0; /* Un poco más compacto */
+        padding: 0.5rem 0;
     }
 
     /* 4. Ajustar el botón de teléfono/acción para que se vea bien */
@@ -1087,7 +1076,7 @@ body {
     .nosotros-content,
     .stats-grid,
     .contacto-content,
-    .ubicacion-grid
+    .ubicacion-grid, /* <-- CORRECCIÓN: Se añadió la coma que faltaba */
     .footer-content {
         grid-template-columns: 1fr;
         flex-direction: column;
@@ -1110,15 +1099,15 @@ body {
 
     .footer-content {
         gap: var(--spacing-xl);
-        grid-template-columns: 1fr; /* Fuerza 1 sola columna en móvil */
+        grid-template-columns: 1fr;
     }
 
     .footer-section {
-        align-items: center; /* Centra todo el contenido */
+        align-items: center;
     }
 
     .footer-title::after {
-        left: 50%;           /* Centra la línea decorativa */
+        left: 50%;
         transform: translateX(-50%);
     }
 
