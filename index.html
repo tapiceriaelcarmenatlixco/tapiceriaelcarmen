@@ -3,31 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- SEO SERP -->
-    <title>Tapicería El Carmen - Tapizados a tu medida en Atlixco, Puebla</title>
+    <title>Tapicería El Carmen - Tapizados personalizados en Atlixco</title>
     <meta name="description" content="Tapicería profesional en Atlixco, Puebla. Retapizado de sofás, sillas y muebles a medida.">
     <meta name="keywords" content="tapicería Atlixco, tapizados a medida, retapizado sofás, tapizado sillas, muebles a medida">
     <link rel="canonical" href="https://tapiceriaelcarmen.com/">
-   <!-- SOCIAL MEDIA (Open Graph) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tapiceriaelcarmen.com/">
     <meta property="og:title" content="Tapicería El Carmen | Retapizado Profesional en Atlixco">
     <meta property="og:description" content="Tapizado profesional y personalizado de salas, sillas y asientos para motos en Atlixco.">
-     <!-- IMAGEN SOCIAL REINSERTADA (CRÍTICO) -->
     <meta property="og:image" content="https://tapiceriaelcarmen.com/assets/img/taller-tapiceria-elcarmen.jpg">
-     <!-- PRE-CONNECTION (VELOCIDAD) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <!-- ESTILOS Y FUENTES -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <!-- FAVICONS -->
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96x96.png">
     <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
-    <!-- SCHEMA JSON-LD (CORREGIDO) -->
     <script type="application/ld+json">
         {
         "@context": "https://schema.org",
@@ -54,13 +47,7 @@
         "openingHoursSpecification": [
             {
             "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday"
-            ],
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
             "opens": "08:00",
             "closes": "19:00"
             },
@@ -71,9 +58,7 @@
             "closes": "16:00"
             }
         ],
-        "sameAs": [
-            "https://www.facebook.com/FastTapiceria/"
-        ],
+        "sameAs": ["https://www.facebook.com/FastTapiceria/"],
         "serviceArea": {
             "@type": "GeoCircle",
             "geoMidpoint": {
@@ -106,6 +91,7 @@
                         <i class="fas fa-phone"></i>
                         244 113 0181
                     </a>
+                </div>
             </div>
         </div>
     </header>
@@ -139,7 +125,6 @@
                         Más información
                     </button>
                 </div>
-
             </div>
         </div>
     </section>
@@ -336,28 +321,37 @@
         </div>
     </section>
 
-    <!-- Contacto Section -->
+    <!-- Contacto Section MODIFICADA: Eliminación de tablas y bordes -->
     <section id="contacto" class="contacto">
         <div class="container">
             <div class="contacto-content">
                 <div class="horarios-column" id="horarios" style="scroll-margin-top: 100px;">
                     <h2 class="section-title">Horarios de Atención</h2>
-                    <div class="horarios-table">
-                        <div class="info-item">
+                    
+                    <div class="horarios-clean-container">
+                        <div class="info-group">
                             <i class="fas fa-clock"></i>
-                            <span>Lunes a Viernes de 9 am - 7 pm; Sábado de 9 am a 4 pm.</span>
+                            <div class="info-text">
+                                <p><strong>Lunes a Viernes:</strong> 9:00 am - 7:00 pm</p>
+                                <p><strong>Sábado:</strong> 9:00 am - 4:00 pm</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="contacto-info">
-                        <div class="info-item">
+                        
+                        <div class="info-group">
                             <i class="fas fa-phone"></i>
-                            <span>244 113 0181</span>
+                            <div class="info-text">
+                                <p>244 113 0181</p>
+                            </div>
                         </div>
-                        <div class="info-item">
+
+                        <div class="info-group">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Calz del Carmen 1112, Hogar del Obrero, 74260 Atlixco, Pue.</span>
+                            <div class="info-text">
+                                <p>Calz del Carmen 1112, Hogar del Obrero, 74260 Atlixco, Pue.</p>
+                            </div>
                         </div>
                     </div>
+
                 </div>
                 <div class="formulario-column" id="presupuesto" style="scroll-margin-top: 100px;">
                     <h2 class="section-title">¡Solicita tu presupuesto!</h2>
@@ -435,8 +429,6 @@
         </div>
     </section>
 
-
-
     <!-- Ubicación Section -->
     <section id="ubicacion" class="ubicacion">
         <div class="container">
@@ -497,21 +489,17 @@
         </div>
     </section>
 
-<!-- Footer Optimizado -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <!-- SOLUCIÓN: Inserción explícita del logo -->
                     <img src="/assets/img/tapiceriaelcarmen-logo.png" alt="Logo Tapicería El Carmen Atlixco" class="footer-logo" width="150" style="margin-bottom: 1rem;">
-                    
                     <h3 class="footer-title">Tapicería El Carmen</h3>
                     <p class="footer-text">Tapizados hechos a tu medida en Atlixco. Renovamos tus muebles con acabados profesionales.</p>
                 </div>
                 <div class="footer-section">
                     <h3 class="footer-title">Contacto</h3>
                     <div class="footer-contact">
-                        <!-- Enlaces clickeables para UX Móvil -->
                         <p>
                             <i class="fas fa-phone"></i> 
                             <a href="tel:2441130181" style="color:inherit; text-decoration:none;">244 113 0181</a>
@@ -543,7 +531,6 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Float Button -->
     <a href="#" class="whatsapp-float" onclick="abrirWhatsApp()" title="Contactar por WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
