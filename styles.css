@@ -273,7 +273,7 @@ body {
     z-index: calc(var(--z-base) + 1);
     text-align: center;
     color: var(--blanco-puro);
-    padding: 0 var(--spacing-md); /* ✅ PADDING CRÍTICO */
+    padding: 0 var(--spacing-md);
 }
 
 .hero-title {
@@ -372,12 +372,16 @@ body {
     margin: 0 auto;
     overflow: hidden;
     padding: 0 var(--spacing-md);
+    /* Asegurar que el contenedor padre tenga ancho para cálculos */
+    width: 100%;
 }
 
 .testimonios-container {
     display: flex;
     transition: transform var(--transition-slow) ease;
     gap: var(--spacing-lg);
+    /* Optimización de rendimiento */
+    will-change: transform;
 }
 
 .testimonio-card {
@@ -385,7 +389,9 @@ body {
     padding: var(--spacing-lg);
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-md);
+    /* Dimensiones fijas para cálculo preciso JS */
     min-width: 300px;
+    width: 300px; 
     flex: 0 0 300px;
     transition-property: opacity, transform, filter, box-shadow;
     transition-duration: var(--transition-slow);
@@ -618,7 +624,7 @@ body {
 }
 
 .nosotros-text {
-    padding: 0 var(--spacing-md); /* ✅ PADDING CRÍTICO */
+    padding: 0 var(--spacing-md);
 }
 
 .nosotros-description {
@@ -741,8 +747,8 @@ body {
     align-items: start;
 }
 
-/* Columna de Horarios */
-/*.horarios-column {
+/* Columna de Horarios (REFACTORIZADA) */
+.horarios-column {
     background: var(--blanco-puro);
     padding: var(--spacing-xl);
     border-radius: var(--border-radius-lg);
@@ -755,57 +761,36 @@ body {
     color: var(--gris-carbon);
 }
 
-
-.horarios-table {
-    border: 1px solid var(--gris-medio);
-    border-radius: var(--border-radius-lg);
-    overflow: hidden;
-    margin-bottom: var(--spacing-lg);
-}
-
-
-.horario-row {
-    display: flex;
-    justify-content: space-between;
-    padding: var(--spacing-md) var(--spacing-lg);
-    border-bottom: 1px solid var(--gris-medio);
-}
-
-.horario-row:last-child {
-    border-bottom: none;
-}
-
-.horario-row:nth-child(even) {
-    background: var(--gris-claro);
-}
-
-.dia {
-    font-weight: var(--font-weight-medium);
-    color: var(--gris-carbon);
-}
-
-.hora {
-    color: var(--negro-suave);
-}
-
-.contacto-info {
+/* Nuevos Estilos Limpios para Horarios */
+.horarios-clean-container {
     display: flex;
     flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.info-group {
+    display: flex;
+    align-items: flex-start;
     gap: var(--spacing-md);
 }
 
-.info-item {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    color: var(--negro-suave);
-}
-*/
-.info-item i {
+.info-group i {
+    font-size: 1.5rem;
     color: var(--amarillo-hover);
-    width: 20px;
+    margin-top: 4px; /* Alineación óptica con el texto */
+    width: 24px;
     text-align: center;
-    flex-shrink: 0;
+}
+
+.info-text p {
+    margin: 0;
+    color: var(--gris-carbon);
+    line-height: 1.5;
+}
+
+.info-text p strong {
+    color: var(--negro-suave);
+    font-weight: var(--font-weight-semibold);
 }
 
 /* Columna de Formulario */
@@ -1290,5 +1275,6 @@ section {
     .testimonio-card {
         min-width: 260px;
         flex: 0 0 260px;
+        width: 260px;
     }
 }
