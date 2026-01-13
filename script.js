@@ -86,13 +86,16 @@ function toggleMobileMenu() {
     const nav = document.querySelector('.nav');
     const mobileBtn = document.querySelector('.mobile-menu-btn');
     
-    nav.classList.toggle('mobile-active');
-    mobileBtn.classList.toggle('active');
+    if (nav) {
+        nav.classList.toggle('mobile-active');
+    }
+    if (mobileBtn) {
+        mobileBtn.classList.toggle('active');
+    }
 }
 
 // Función para mostrar notificaciones
 function showNotification(message, type = 'info') {
-    // Crear elemento de notificación
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
     notification.innerHTML = `
@@ -102,7 +105,6 @@ function showNotification(message, type = 'info') {
         </div>
     `;
     
-    // Agregar estilos si no existen
     if (!document.querySelector('#notification-styles')) {
         const styles = document.createElement('style');
         styles.id = 'notification-styles';
@@ -138,13 +140,10 @@ function showNotification(message, type = 'info') {
         document.head.appendChild(styles);
     }
     
-    // Agregar al DOM
     document.body.appendChild(notification);
     
-    // Mostrar con animación
     setTimeout(() => notification.classList.add('show'), 100);
     
-    // Remover después de 3 segundos
     setTimeout(() => {
         notification.classList.remove('show');
         setTimeout(() => notification.remove(), 300);
@@ -182,6 +181,7 @@ function handleScrollAnimations() {
 // Función para cambiar el header al hacer scroll
 function handleHeaderScroll() {
     const header = document.querySelector('.header');
+    if (!header) return;
     const scrolled = window.scrollY > 50;
     
     if (scrolled) {
@@ -206,20 +206,36 @@ function moveCarousel(direction) {
     updateCarousel();
 }
 
-// Función para actualizar el carrusel
+// Función para actualizar el carrusel (CORREGIDA PARA CENTRADO PERFECTO)
 function updateCarousel() {
-    const container = document.getElementById('testimoniosContainer');
+    const wrapper = document.querySelector('.testimonios-carousel'); // Contenedor visible
+    const container = document.getElementById('testimoniosContainer'); // Tira flexible
     const cards = container.querySelectorAll('.testimonio-card');
     const indicators = document.querySelectorAll('.carousel-indicator');
     
-    // Calcular el desplazamiento
-    const cardWidth = 300 + 24; // ancho de card + gap
-    const offset = currentTestimonioIndex * cardWidth;
+    if (!wrapper || !container || cards.length === 0) return;
+
+    // Obtener dimensiones actuales
+    const wrapperWidth = wrapper.offsetWidth;
+    const card = cards[0];
+    const cardWidth = card.offsetWidth;
+    
+    // Obtener el gap computado
+    const style = window.getComputedStyle(container);
+    const gap = parseFloat(style.gap) || 32; // Fallback a 2rem (32px) si falla el parseo
+    
+    const fullCardWidth = cardWidth + gap;
+
+    // LÓGICA DE CENTRADO MATEMÁTICO:
+    // Offset = (Centro del Wrapper) - (Mitad de la Card) - (Posición de la Card en la tira)
+    const centerOffset = (wrapperWidth / 2) - (cardWidth / 2);
+    const positionOffset = currentTestimonioIndex * fullCardWidth;
+    const finalTranslate = centerOffset - positionOffset;
     
     // Aplicar transformación
-    container.style.transform = `translateX(-${offset}px)`;
+    container.style.transform = `translateX(${finalTranslate}px)`;
     
-    // Actualizar clases de las cards
+    // Actualizar clases de las cards para efectos visuales
     cards.forEach((card, index) => {
         card.classList.remove('active', 'side');
         
@@ -251,19 +267,25 @@ function goToTestimonio(index) {
 function initCarousel() {
     const indicatorsContainer = document.getElementById('carouselIndicators');
     
-    // Crear indicadores
-    for (let i = 0; i < totalTestimonios; i++) {
-        const indicator = document.createElement('div');
-        indicator.className = 'carousel-indicator';
-        if (i === 0) indicator.classList.add('active');
-        indicator.onclick = () => goToTestimonio(i);
-        indicatorsContainer.appendChild(indicator);
+    // Limpiar indicadores existentes para evitar duplicados si se llama múltiples veces
+    if (indicatorsContainer) {
+        indicatorsContainer.innerHTML = ''; 
+        
+        // Crear indicadores
+        for (let i = 0; i < totalTestimonios; i++) {
+            const indicator = document.createElement('div');
+            indicator.className = 'carousel-indicator';
+            if (i === 0) indicator.classList.add('active');
+            indicator.onclick = () => goToTestimonio(i);
+            indicatorsContainer.appendChild(indicator);
+        }
     }
     
     // Inicializar posición
-    updateCarousel();
+    // Pequeño timeout para asegurar que el DOM ha renderizado estilos
+    setTimeout(updateCarousel, 100);
     
-    // Auto-play del carrusel
+    // Auto-play del carrusel (reinicia el timer si el usuario interactúa manualmente podría mejorarse, pero básico funcional)
     setInterval(() => {
         moveCarousel(1);
     }, 5000);
@@ -271,55 +293,46 @@ function initCarousel() {
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', function() {
-    // ------------------------------------------
-    // ACTUALIZACIÓN DE AÑO (COPYRIGHT)
-    // ------------------------------------------
     const yearSpan = document.getElementById('current-year');
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
-    // ------------------------------------------
 
-    // Manejar clicks en enlaces de navegación
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const target = this.getAttribute('href');
             smoothScroll(target);
             
-            // Cerrar menú móvil si está abierto
             const nav = document.querySelector('.nav');
-            if (nav.classList.contains('mobile-active')) {
+            if (nav && nav.classList.contains('mobile-active')) {
                 toggleMobileMenu();
             }
         });
     });
     
-    // Manejar scroll
     window.addEventListener('scroll', function() {
         handleScrollAnimations();
         handleHeaderScroll();
     });
     
-    // Ejecutar animaciones iniciales
-    handleScrollAnimations();
+    // Recalcular carrusel al cambiar tamaño de ventana (CRÍTICO PARA RESPONSIVE)
+    window.addEventListener('resize', updateCarousel);
     
-    // Inicializar carrusel de testimonios
+    handleScrollAnimations();
     initCarousel();
     
-    // Manejar clicks fuera del menú móvil
     document.addEventListener('click', function(e) {
         const nav = document.querySelector('.nav');
         const mobileBtn = document.querySelector('.mobile-menu-btn');
         
-        if (nav.classList.contains('mobile-active') && 
+        if (nav && nav.classList.contains('mobile-active') && 
             !nav.contains(e.target) && 
-            !mobileBtn.contains(e.target)) {
+            (mobileBtn && !mobileBtn.contains(e.target))) {
             toggleMobileMenu();
         }
     });
     
-    // Lazy loading para imágenes
     if ('IntersectionObserver' in window) {
         const imageObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
@@ -336,11 +349,35 @@ document.addEventListener('DOMContentLoaded', function() {
             imageObserver.observe(img);
         });
     }
+
+    setupFormValidation();
+    
+    const phoneInput = document.getElementById('telefono');
+    if (phoneInput) {
+        phoneInput.addEventListener('input', function() {
+            formatPhoneNumber(this);
+        });
+    }
+
+    // Tracking simple
+    document.querySelectorAll('[onclick*="abrirWhatsApp"]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            trackEvent('Contact', 'WhatsApp Click', btn.textContent.trim());
+        });
+    });
+    
+    const contactForm = document.getElementById('contactForm');
+    if(contactForm) {
+        contactForm.addEventListener('submit', () => {
+            trackEvent('Contact', 'Form Submit', 'Contact Form');
+        });
+    }
 });
 
-// Función para validar formulario en tiempo real
 function setupFormValidation() {
     const form = document.getElementById('contactForm');
+    if (!form) return;
+
     const inputs = form.querySelectorAll('input[required], select[required]');
     
     inputs.forEach(input => {
@@ -358,7 +395,7 @@ function setupFormValidation() {
 
 function validateField(field) {
     const value = field.value.trim();
-    const isValid = value !== '';
+    let isValid = value !== '';
     
     if (field.type === 'tel') {
         const phoneRegex = /^[0-9]{10}$/;
@@ -376,10 +413,6 @@ function validateField(field) {
     return isValid;
 }
 
-// Inicializar validación del formulario
-document.addEventListener('DOMContentLoaded', setupFormValidation);
-
-// Función para formatear número de teléfono
 function formatPhoneNumber(input) {
     let value = input.value.replace(/\D/g, '');
     if (value.length >= 10) {
@@ -389,58 +422,25 @@ function formatPhoneNumber(input) {
     input.value = value;
 }
 
-// Agregar formato automático al campo de teléfono
-document.addEventListener('DOMContentLoaded', function() {
-    const phoneInput = document.getElementById('telefono');
-    if (phoneInput) {
-        phoneInput.addEventListener('input', function() {
-            formatPhoneNumber(this);
-        });
-    }
-});
-
-// Función para detectar dispositivo móvil
 function isMobile() {
     return window.innerWidth <= 768;
 }
 
-// Optimizaciones para móvil
 if (isMobile()) {
-    // Reducir animaciones en móvil para mejor rendimiento
     document.documentElement.style.setProperty('--animation-duration', '0.3s');
-    
-    // Manejar orientación
     window.addEventListener('orientationchange', function() {
         setTimeout(() => {
             window.scrollTo(0, window.scrollY);
+            updateCarousel(); // Recalcular carrusel al rotar
         }, 100);
     });
 }
 
-// Función para analytics (placeholder)
 function trackEvent(category, action, label) {
-    // Aquí se puede integrar Google Analytics o similar
     console.log(`Event tracked: ${category} - ${action} - ${label}`);
 }
 
-// Trackear eventos importantes
-document.addEventListener('DOMContentLoaded', function() {
-    // Trackear clicks en botones de WhatsApp
-    document.querySelectorAll('[onclick*="abrirWhatsApp"]').forEach(btn => {
-        btn.addEventListener('click', () => {
-            trackEvent('Contact', 'WhatsApp Click', btn.textContent.trim());
-        });
-    });
-    
-    // Trackear envío de formulario
-    document.getElementById('contactForm').addEventListener('submit', () => {
-        trackEvent('Contact', 'Form Submit', 'Contact Form');
-    });
-});
-
-// Función para mejorar SEO
 function updateMetaTags() {
-    // Actualizar título basado en la sección visible
     const sections = document.querySelectorAll('section[id]');
     let currentSection = 'inicio';
     
@@ -463,10 +463,8 @@ function updateMetaTags() {
     }
 }
 
-// Actualizar meta tags al hacer scroll
 window.addEventListener('scroll', updateMetaTags);
 
-// Función para enviar mensaje simplificado por WhatsApp
 function enviarWhatsAppSimple(event) {
     event.preventDefault();
     
@@ -484,7 +482,6 @@ function enviarWhatsAppSimple(event) {
     
     window.open(url, '_blank');
     
-    // Limpiar formulario
     document.getElementById('nombre').value = '';
     document.getElementById('descripcion').value = '';
 }
