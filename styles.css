@@ -793,14 +793,14 @@ body {
     flex-direction: column;
     gap: var(--spacing-md);
 }
-
+/*
 .info-item {
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
     color: var(--negro-suave);
 }
-
+*/
 .info-item i {
     color: var(--amarillo-hover);
     width: 20px;
