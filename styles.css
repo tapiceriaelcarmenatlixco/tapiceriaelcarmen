@@ -755,12 +755,14 @@ body {
     color: var(--gris-carbon);
 }
 
+/*
 .horarios-table {
     border: 1px solid var(--gris-medio);
     border-radius: var(--border-radius-lg);
     overflow: hidden;
     margin-bottom: var(--spacing-lg);
 }
+*/
 
 .horario-row {
     display: flex;
